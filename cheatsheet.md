@@ -35,6 +35,41 @@
 ###### URL for accessing file:
 > http://*buckt_name*.s3-website.*aws_region*.amazonaws.com
 
+###### User Policy to upload-only file to folder in specific bucket:
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowListingOfFolder",
+            "Action": [
+                "s3:ListBucket"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:s3:::BUCKET_NAME"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "s3:prefix": [
+                        "FOLDER_NAME/*"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "AllowCopyToFolder",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::BUCKET_NAME/FOLDER_NAME/*"
+            ]
+        }
+    ]
+}
+```
 
 ## CloudFormation
 ###### create stack:
