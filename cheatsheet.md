@@ -1,5 +1,5 @@
 # CheatSheet
 
-S3
-Make bucket:
+## S3
+###### Make bucket:
 aws s3 mb s3://<bucket name>
