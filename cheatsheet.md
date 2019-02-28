@@ -13,19 +13,14 @@
 ###### Example policy: public access (for web hosting):
 ```
 {
-    "Version": "2008-10-17",
-    "Id": "PolicyForWebHosting",
-    "Statement": [
-        {
-            "Sid": "1",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::cloudfront:user/CLOUD FRONT USER"
-            },
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::BUCKET_NAME/*"
-        }
-    ]
+  "Version":"2012-10-17",
+  "Statement":[{
+	"Sid":"PublicReadGetObject",
+        "Effect":"Allow",
+	  "Principal": "*",
+      "Action":["s3:GetObject"],
+      "Resource":["arn:aws:s3:::BUCKET_NAME/*"]
+    }]
 }
 ```
 
