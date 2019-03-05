@@ -76,7 +76,7 @@ as REST API endpoint: and this way you can use origin access identity to restric
 CloudFront will create proper policy for S3 bucket
 
 ###### Remember to:
-- set alias (cname) on distribution (to example.com)
-- set Route 53 hosted zone with example.com as alias (IPv4 & IPv6)
-
+- on CloudFront: set alias (cname) on distribution (to example.com)
+- on CloudFront: set Default Root Object to index.html
+- on Route 53: set Route 53 hosted zone with example.com as alias (IPv4 & IPv6)
 
