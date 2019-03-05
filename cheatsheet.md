@@ -73,3 +73,5 @@ as website endpoint: and then it cannot be used with origin access identity
 
 as REST API endpoint: and this way you can use origin access identity to restrict access to S3 bucket
 > example-bucket.s3.amazonaws.com
+
+###### To create identity:
