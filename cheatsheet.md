@@ -68,8 +68,8 @@
 
 ## CloudFront
 ###### CloudFront S3 Origin can be set in two ways:
-> as website endpoint: and then it cannot be used with origin access identity
-> example: example-bucket.s3-website-us-east-1.amazonaws.com
+as website endpoint: and then it cannot be used with origin access identity
+> example-bucket.s3-website-us-east-1.amazonaws.com
 
-> as REST API endpoint: and this way you can use origin access identity to restrict access to S3 bucket
-> example: example-bucket.s3.amazonaws.com
+as REST API endpoint: and this way you can use origin access identity to restrict access to S3 bucket
+> example-bucket.s3.amazonaws.com
