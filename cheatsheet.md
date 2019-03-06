@@ -27,6 +27,9 @@
 ###### Copying local file to bucket:
 > aws s3 cp *local_file* s3://*bucket_name*/*destination_file*
 
+###### Copying bucket content to local folder:
+> aws s3 sync s3://*bucket_name* .
+
 ###### URL for accessing file:
 > http://*buckt_name*.s3-website.*aws_region*.amazonaws.com
 
