@@ -83,3 +83,22 @@ CloudFront will create proper policy for S3 bucket
 - on CloudFront: set Default Root Object to index.html
 - on Route 53: set Route 53 hosted zone with example.com as alias (IPv4 & IPv6)
 
+## Cognito
+###### sign up user:
+> aws cognito-idp sign-up --client-id *Application-Client-ID* --region *region* --username *email* --password *password-for-the-user* --user-attributes Name="email",Value="*email*"
+
+response should look like this:
+```
+{
+    "UserConfirmed": false,
+    "CodeDeliveryDetails": {
+        "Destination": "x***@x***.xxx",
+        "DeliveryMedium": "EMAIL",
+        "AttributeName": "email"
+    },
+    "UserSub": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+}
+```
+
+###### authenticate user with the pool (make user active):
+> aws cognito-idp admin-confirm-sign-up --region *region* --user-pool-id *user-pool-id* --username *mail*
