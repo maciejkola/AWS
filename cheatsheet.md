@@ -102,3 +102,19 @@ response should look like this:
 
 ###### authenticate user with the pool (make user active):
 > aws cognito-idp admin-confirm-sign-up --region *region* --user-pool-id *user-pool-id* --username *mail*
+
+
+###### get user token (valid for 30 days by default)
+> aws cognito-idp admin-initiate-auth --region *region* --cli-input-json file://auth.json
+where auth.json:
+```
+{
+    "UserPoolId": "*user-pool-id*",
+    "ClientId": "*client-id*",
+    "AuthFlow": "ADMIN_NO_SRP_AUTH",
+    "AuthParameters": {
+        "USERNAME": "blabla",
+        "PASSWORD": "bleble"
+    }
+}
+```
