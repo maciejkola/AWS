@@ -106,7 +106,9 @@ response should look like this:
 
 ###### get user token (valid for 30 days by default)
 > aws cognito-idp admin-initiate-auth --region *region* --cli-input-json file://auth.json
-where auth.json:
+NOTE: App client should have this checkbox enabled: "Enable sign-in API for server-based authentication (ADMIN_NO_SRP_AUTH)"
+
+auth.json:
 ```
 {
     "UserPoolId": "*user-pool-id*",
