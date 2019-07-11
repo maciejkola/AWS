@@ -127,7 +127,7 @@ auth.json:
 refresh.json:
 ```
 {
-    "UserPoolId": "*User Pool ID",
+    "UserPoolId": "*User Pool ID*",
     "ClientId": "*Client ID*",
     "AuthFlow": "REFRESH_TOKEN",
     "AuthParameters": {
