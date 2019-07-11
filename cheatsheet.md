@@ -104,7 +104,7 @@ response should look like this:
 > aws cognito-idp admin-confirm-sign-up --region *region* --user-pool-id *user-pool-id* --username *mail*
 
 
-###### get user token (valid for 30 days by default)
+###### get user token (valid for 1h by default)
 > aws cognito-idp admin-initiate-auth --region *region* --cli-input-json file://auth.json
 NOTE: App client should have this checkbox enabled: "Enable sign-in API for server-based authentication (ADMIN_NO_SRP_AUTH)"
 
@@ -117,6 +117,21 @@ auth.json:
     "AuthParameters": {
         "USERNAME": "blabla",
         "PASSWORD": "bleble"
+    }
+}
+```
+
+###### to refresh token:
+> aws cognito-idp admin-initiate-auth --region us-east-1 --cli-input-json file://refresh.json
+
+refresh.json:
+```
+{
+    "UserPoolId": "*User Pool ID",
+    "ClientId": "*Client ID*",
+    "AuthFlow": "REFRESH_TOKEN",
+    "AuthParameters": {
+        "REFRESH_TOKEN": "*loooooong ID Token*"
     }
 }
 ```
